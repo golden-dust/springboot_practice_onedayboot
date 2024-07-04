@@ -109,9 +109,9 @@ public class BookController {
 	}
 	
 	@PostMapping("/book/delete")
-	public String delete(Integer bookId) throws NoSuchElementException {
+	public String delete(@RequestParam(value="bookId") Integer bookId) throws NoSuchElementException {
 		this.bookService.delete(bookId);
-		return "redirect:book/list";
+		return "redirect:/book/list";
 	}
 	
 	@GetMapping(value= {"/book/list", "/book"})

@@ -15,8 +15,12 @@ import com.goldendust.dev.book.service.BookLogService;
 @RequestMapping("/book-log")
 public class BookLogController {
 	
-	@Autowired
 	private BookLogService bookLogService;
+	
+	@Autowired
+	public void setBookLogService(BookLogService bookLogService) {
+		this.bookLogService = bookLogService;
+	}
 	
 	@PostMapping("/create")
 	public ResponseEntity<BookLogCreateResponseDTO> insert(@RequestBody BookLogCreateDTO bookLogCreateDTO) {

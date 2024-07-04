@@ -23,7 +23,7 @@ public class BookLogService {
 		this.bookLogRepository = bookLogRepository;
 	}
 	
-	public BookLogCreateResponseDTO insert(@Validated BookLogCreateDTO bookLogCreateDTO) throws NoSuchElementException {
+	public BookLogCreateResponseDTO insert(BookLogCreateDTO bookLogCreateDTO) {
 		Book book = this.bookRepository
 				.findById(bookLogCreateDTO.getBookId())
 				.orElseThrow();

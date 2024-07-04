@@ -25,7 +25,7 @@ import lombok.NoArgsConstructor;
 public class BookLog {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Integer bookLogId;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
